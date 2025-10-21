@@ -303,6 +303,8 @@ margin: 1vw;
 
   position: relative;
   max-width: 60vw;
+  margin: 0 auto;
+  text-align: center;
 }
 .intro1 {
   font-family: var(--font-body);
@@ -317,6 +319,7 @@ margin-bottom: 1rem;
   position: relative;
   top: -10vh;
   box-shadow: var(--shadow-soft);
+  text-align: center;
 }
 .footer {
 position: relative;

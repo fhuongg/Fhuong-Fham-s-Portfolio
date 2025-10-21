@@ -257,22 +257,7 @@ spinStars.forEach(id => {
   });
 });
 // Get the doll-box element
-// Get the about split section and the doll box div
-window.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed");
-    // wait 3 seconds
-    setTimeout(() => {
-      // grab the elements
-      const dollBox = document.querySelector(".doll-box");
-      const video = document.querySelector(".intro-video");
-      const items = document.querySelector(".box-items");
 
-      // add a class to each to shift them left
-      dollBox?.classList.add("shift-left");
-      video?.classList.add("shift-left");
-      items?.classList.add("shift-left");
-    }, 3000);
-  });
 
 const uiTItle = document.getElementById('ui-title');
 const uiTItleAppear = document.getElementById('ui-title-1');
@@ -282,7 +267,14 @@ uiTItle.addEventListener('click', function() {
 });
 
 // Cart click interaction
-
+document.getElementById('badge').addEventListener('click', function() {
+  const link = document.createElement('a');
+  link.href = './CV_FHUONGFHAM.pdf'; // use "./" to ensure it looks in the same folder
+  link.download = 'CV_FHUONGFHAM.pdf';
+  document.body.appendChild(link); // some browsers need it in the DOM
+  link.click();
+  document.body.removeChild(link);
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');

@@ -55,6 +55,16 @@ footer[role="contentinfo2"] {
     font-family: var(--font-mono);
   
 }
+#footer3 {
+   margin-top: 20%;
+    padding: 2rem 1rem;
+    text-align: center;
+    /* background: #fffff8; */
+    position: relative;
+    font-size: 1rem;
+    font-family: var(--font-mono);
+  
+}
 #mobile-warning {
   display: none;
 }
@@ -348,6 +358,7 @@ small {
   color: var(--color-muted);
   font-family: var(--font-serif);
   line-height: 1.2 !important;
+  margin-top: -1.7vh;
 }
 
 a {
@@ -646,10 +657,14 @@ font-size: 1.3rem !important;
     footer[role="contentinfo"] {
     margin-top: 150%;
     }
+    footer[role="contentinfo2"] {
+    margin-top: 30%;
+    }
 }
 
 /* For mobile phones */
 @media (max-width: 768px) {
+ 
     html {
         font-size: 14px; /* Even smaller for mobile */
     }
@@ -659,11 +674,14 @@ font-size: 1.3rem !important;
         font-size: 1.5rem; /* = 28px (14 * 2) instead of 45px */
     }
     p {
-      font-size: 1.8rem !important;
+      font-size: 1.5rem !important;
     }
     span {
       font-size: 0.8rem !important;
     }
+     #avatar {
+    max-width: 40vw;
+  }
 }
 
 /* For very small phones */

@@ -615,6 +615,12 @@ top: 50vh;
     width: 45vw;
     transform: rotate(-5deg);
 }
+#badge.spread {
+top: 50vh;
+    left: -20vw;
+    width: 15vw;
+    transform: rotate(-5deg);
+}
 #id-card.spread {
 top: 45vh;
     left: -20vw;
@@ -729,6 +735,11 @@ top: 45vh;
     left: 0vw;
     width: 60vw;
 }
+#badge.spread {
+  
+    width: 25vw;
+    left: 35vw;
+  }
   .speech-bubble {
     right: 5%;
     left: auto;
