@@ -173,7 +173,6 @@ function makeDraggable(el) {
 
   // --- Mouse Events ---
   el.addEventListener("mousedown", (e) => {
-    e.preventDefault();
     startDrag(e.clientX, e.clientY);
   });
 
