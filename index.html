@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fhuong Fham's Portfolio</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/home.css">
+          <link rel="stylesheet" href="css/re.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+
+<body class="loading-body">
+  <div class="loading-container">
+    <img id="avatar" src="" alt="avatar" class="avatar" />
+    <p id="loading-text">LOADING...</p>
+    <p id="quote"></p>
+  </div>
+
+  <div id="fade-overlay"></div>
+
+  <div id="main-content" style="display: none;">
+      <div id="mobile-warning">
+    <p>Mobile version is loading... <br>
+    for now, let’s meet on a bigger screen :)</p>
+  </div>
+
+    <header>
+        <div class="mobile-header">
+    <a href="index.html"><img id="nav-logo-mobile" src="img/logo.svg" alt="Logo" class="mobile-logo"></a>
+    <button class="hamburger" aria-label="Menu"></button>
+    
+    <!-- This is the dropdown menu that will appear -->
+    <div class="mobile-dropdown">
+        <a class="menu-links">Works</a>
+                    <div class="submenu">
+                <a href="mm.html">Mixed Media</a>
+                <a href="poetry.html">Poetry</a>
+                <a href="uiux.html">UI / UX</a>
+                <a href="graphic.html">Graphics / Illustration</a>
+            </div>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+       <nav>
+  <ul class="nav-logo">
+    <li class="has-dropdown">
+      <a href="#works" id="works-link">Works</a>
+      <div class="dropdown">
+        <img src="img/overr.png" class="dropdown-bg" alt="Dropdown background">
+        <div class="dropdown-content">
+          <div class="dropdown-item"><span>Mixed media</span></div>
+          <div class="dropdown-item"><span>Poetry</span></div>
+          <div class="dropdown-item"><span>UI / UX</span></div>
+          <div class="dropdown-item"><span>Graphics / <br> Illustration</span></div>
+        </div>
+      </div>
+    </li>
+<li><a href="about.html" id="about-link">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+     <!-- Hero / Landing Section -->
+  <main>
+    <section class="hero" aria-labelledby="site-title">
+
+
+      <!-- Logo & Decorative Elements -->
+      <div class="hero-visuals">
+<div class="scratch-wrapper">
+  <!-- Bottom: video -->
+  <video autoplay muted loop id="video-bg" playsinline>
+    <source src="img/scratch.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+   <video muted id="video-bg-1" playsinline>
+    <source src="img/end.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Middle: frame -->
+  <img src="img/Artboard 2.svg" id="frame" alt="Decorative frame">
+
+  <!-- Top: scratchable canvas -->
+  <canvas id="scratchCanvas"></canvas>
+</div>
+
+
+<!-- load your script as module -->
+
+        <!-- Surrounding stickers / illustrations -->
+         <img src="img/arơ.png" alt="Arrow" id="arrow" class="decor">
+         <div class="funfact-item">
+        <img src="img/gaspard.png" alt="Gaspard in headphones" class="decor" id="gaspard" aria-hidden="true">
+        <div class="funfact-text" id="funfact-text">
+          <p>My brain runs on music (12 hours a day!)</p>  
+        </div>  
+        </div>
+        <div class="funfact-item">
+        <img src="img/swan.png" alt="Swan patch" class="decor" id="swan" aria-hidden="true">
+        <div class="funfact-text" >
+          <p>You can never guess my personality type...</p>  
+        </div>
+        </div>
+        <div class="funfact-item">
+        <img src="img/k.png" alt="Cartoon keychain of Phuong" id="keychain" class="decor">
+        <div class="funfact-text">
+          <p>Everything is a movie reference :D</p>
+        </div>
+        </div>
+        <div class="funfact-item">
+        <img src="img/soda.png" alt="Soda stamp" class="decor" id="soda" aria-hidden="true">
+        <div class="funfact-text">
+          <p>There’s always room for dessert</p>
+        </div>
+        </div>
+        <div class="funfact-item">
+    <img src="img/cmaera.png" alt="Cut out camera" id="camera" class="decor">
+    <div class="funfact-text">
+      <p>A Hanoian at heart</p>
+    </div>
+    </div>
+        <img src="img/button.png" alt="Button" id="button" class="decor">
+        
+        <img src="img/swirl.png" alt="Swirl" id="swirl" class="decor">
+        <img src="img/apple.png" alt="apple" id="apple" class="decor">
+        <svg class="decor" id="star1" xmlns="http://www.w3.org/2000/svg" width="104" height="103" viewBox="0 0 104 103" fill="none">
+<path d="M33.6045 0.729232L60.2853 28.9849L97.5047 12.1059L76.775 46.4479L103.456 74.7035L63.9633 67.6724L43.2335 102.014L39.5556 63.3269L0.0630575 56.2958L37.2825 39.4167L33.6045 0.729232Z" fill="#DDE163"/>
+</svg>
+        <svg class="decor" id="star2" xmlns="http://www.w3.org/2000/svg" width="75" height="70" viewBox="0 0 75 70" fill="none">
+<path d="M33.1126 0.760327L46.3388 24.4415L74.6126 30.2054L48.7088 42.9186L41.8874 69.1712L28.6612 45.49L0.387442 39.7261L26.2912 27.0129L33.1126 0.760327Z" fill="#9A6399"/>
+</svg>
+        <svg class="decor" id="star3" xmlns="http://www.w3.org/2000/svg" width="106" height="101" viewBox="0 0 106 101" fill="none">
+<path d="M59.9827 0.00949416L65.1739 38.5231L105.251 46.522L68.3823 62.3259L73.5735 100.84L45.5959 72.0932L8.72675 87.8971L28.3048 54.327L0.327201 25.5807L40.4047 33.5796L59.9827 0.00949416Z" fill="#F6ACC5"/>
+</svg>
+<div class="scratch">
+ 
+  <span id="scratch-text">Scratch <br> me! </br></span>
+  </div>
+
+ 
+    </section>
+    <section class="bio">
+           <div class="hero-text">
+     
+      <img src="img/tapp.png" class="tape" alt="Tape"> 
+      <p class="intro1">
+        ✩°｡ ⋆⸜ 🎧✮
+        <br>
+      Hell-o! I'm Fhuong Fham/Phuong Pham (she/her), a multidisiplinary designer based between Hanoi and Saigon, Vietnam.
+   <br>
+I’m fascinated by the magic that happens when analog and digital collide, a space where possibilities are endless. Somewhere along the way, I also embraced the title of a “professional yearner” :P      </p>
+      </div>
+    </section>
+
+<section class="photo-stack">
+<img class="letter" src="img/letter.png" alt="Photo 2">
+<div class="fancy" >
+  <img id="fancy" src="img/fancy.svg" alt="Fancy decoration">
+</div>
+<div class="landing-contact">
+<a href="mailto:phphuong0307@gmail.com">
+  <img id="email-me" src="img/email.png" alt="Email me decoration"></img>
+</a>
+<a href="https://instagram.com/404.notfh">
+  <img id="dm" src="img/dm.png" alt="Or me decoration"></img>
+</a>
+
+</div>
+ <input type="radio" name="stack" id="photo1" checked>
+  <input type="radio" name="stack" id="photo2">
+  <input type="radio" name="stack" id="photo3">
+  <input type="radio" name="stack" id="photo4">
+  <input type="radio" name="stack" id="photo5">
+  <input type="radio" name="stack" id="photo6">
+  <input type="radio" name="stack" id="photo7">
+    <label for="photo1" class="polaroid">
+    <img src="img/po1.png" alt="Photo 1">
+
+  </label>
+
+  <label for="photo2" class="polaroid">
+    <img src="img/po2.png" alt="Photo 2">
+ 
+  </label>
+  <label for="photo3" class="polaroid">
+    <img src="img/po3.png" alt="Photo 3">
+  </label>
+  <label for="photo4" class="polaroid">
+    <img src="img/po4.png" alt="Photo 4">
+  </label>
+  <label for="photo5" class="polaroid">
+    <img src="img/po5.png" alt="Photo 5">
+  </label>
+  <label for="photo6" class="polaroid">
+    <img src="img/po6.png" alt="Photo 6">
+  </label>
+  <label for="photo7" class="polaroid">
+    <img src="img/po7.png" alt="Photo 7">
+  </label>
+</section>
+
+    <footer role="contentinfo">
+    <small>© <span id="year">2025</span> Fhuong Fham — made with love.</small>
+  </footer>
+  </main>
+
+  </div>
+
+    <script src="load.js"></script>
+    <script src="script.js" defer></script>
+    <script src="home.js" defer></script>
+</body>
+
+</html>
+

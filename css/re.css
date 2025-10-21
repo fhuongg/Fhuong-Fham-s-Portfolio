@@ -1,0 +1,254 @@
+@media (max-width: 1024px) {
+    body {
+        font-size: 12px; /* Prevents tiny text on mobile */
+    }
+    img, .work-item {
+        max-width: 100%; /* Stops images from overflowing */
+        height: auto;
+    }
+    .works-grid {
+        display: block; /* Stacks everything vertically */
+    }
+    .work-item {
+        margin-bottom: 2rem; /* Adds space between stacked items */
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    span p {
+        font-size: 0.8rem !important;
+    }
+    .stickers {
+        top: 40vh;
+   
+    }
+    .speech-bubble {
+   right: 10%;
+        top: 10vh;
+    }
+    .stickers img {
+        max-width: 12vw;
+    }
+    .poem-content img {
+            max-width: 100%;
+
+    height: 70vh;
+    }
+    .poem-content {
+        padding: 0rem !important;
+        max-width: 100%;
+ 
+    }
+  #cart {
+    max-width: 20vw;
+    margin-left: 10vw;
+  }
+
+#loneli {
+ margin-top: 20vh !important;
+}
+#journal-img {
+        max-width: 80vw;
+    top: 40vh;
+    margin-top: 40vh;
+}
+h1 {
+    font-size: 4rem;
+}
+
+    .guest-check {
+        width: 50vw;
+        height: 40vh;
+    }
+   .intro-text {
+padding: 4vw;
+margin-bottom: 4vw;
+   }
+    #new-box{
+    top: 40%;
+    left: 50% !important;
+    max-width: 60vw;
+    display: block;
+}
+#uiux-work img {
+           margin-top: 200px;
+}
+#box-cover {
+    display: none;
+}
+.bio {
+    display: block;
+        transform: translate(-50%, -50%);
+        top: 50vh;
+        left: 50% !important;
+     
+        width: 80vw;
+        font-size: 1.5rem;
+    }
+#about-header {
+    margin-top: -10vh;
+}
+
+ .thank-you {
+    display: none;
+ }
+
+ .page-header {
+    margin-top: 5vw;
+  
+ }
+ .page-title {
+    max-width: 60vw !important;
+ }
+ .work-item img,
+ .work-item video {
+max-width: 45vw;
+ }
+.contact-sticker {
+    position: fixed;
+}
+.project-description {
+  background-image: none;
+  
+    width: 100%;
+    max-width: 100%;
+    height: fit-content;
+    padding: 1vw;
+    /* padding: 40px 30px; */
+    /* padding-bottom: 15vw; */
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #000;
+    position: relative;
+    margin-bottom: 0px !important;
+    background-color: var(--color-bg);
+    background-clip: border-box;
+}
+.project-right {
+    flex: 0;
+    padding: 20px;
+}
+.project-mid {
+    flex: 20;
+    padding: 10px;
+    overflow-y: auto;
+}
+.project-visuals {
+    display: flex
+;
+    flex-direction: column;
+}
+.project-left {
+flex: 2;
+    padding: 2vw;
+    overflow: hidden;
+}
+.project-left img {
+    max-width: 30vw;
+}
+#main-project {
+    padding-top: 5vw;
+}
+.project-split {
+    flex-direction: column-reverse;
+    height: 100vh;
+    /* gap: 2vw; */
+    overflow: hidden;
+}
+.project-title {
+    text-align: center;
+    margin-left: 20px;
+}
+.work-item p {
+    font-size: 1.5rem;
+}
+small {
+    font-size: 1rem;
+}
+.receipt-container {
+    margin-bottom: 130vh;
+}
+#back-mm {
+max-width: 5vw;
+    position: fixed;
+    cursor: pointer;
+    /* align-self: flex-start; */
+    top: 5vh;
+}
+#contact {
+   
+    max-width: 40vw;
+    position: absolute;
+        top: 100%;
+        left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#send {
+    visibility: hidden;
+}
+.project-mid p {
+    font-size: 1.2rem;
+}
+}
+
+
+
+@media (max-width: 768px) {
+    #contact {
+        top: 80%;
+    }
+.stickers {
+    top: 40vh;
+}
+
+#new-box {
+    max-width: 70vw;
+}
+#dropVideo {
+    max-width: 45vw;
+}
+.box-items img {
+    max-width: 150px !important;
+}
+.receipt-paper {
+    top: 0vh;
+}
+
+#mailbox {
+    margin-bottom: 30vh 
+}
+#uiux-work img {
+           margin-top: 150px;
+}
+.bio {
+    top: 55vh;
+}
+#journal-img {
+        max-width: 90vw;
+        top: 40vh;
+        margin-top: 45vh;
+    }
+}
+@media (max-width: 480px) {
+
+    .stickers img {
+        max-width: 15vw;
+    }
+
+   .stickers {
+    top: 35vh;
+   }
+   .bio {
+    top: 50vh;
+   }
+     #cart {
+    max-width: 30vw;
+  }
+  #freebie {
+    max-width: 30vw;
+    top: -2vh;
+    left: 10vw;
+  }
+}

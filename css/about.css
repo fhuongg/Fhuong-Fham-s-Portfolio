@@ -1,0 +1,830 @@
+body {
+    background-image:
+    url('assets/bg.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    max-height: max-content;
+}
+#dropVideo {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  max-width: 20vw;
+  transform: translate(-50%, -50%);
+  z-index: 3   ;
+}
+
+#box {
+   position: absolute;
+  top: 70%;
+  left: 50%;
+ 
+  max-width: 35vw;
+  transform: translate(-50%, -50%);
+  z-index: 1   ;
+  width: 100%;
+  filter: drop-shadow(var(--shadow-soft));
+  
+  justify-content: space-between;
+
+}
+#new-box {
+   position: absolute;
+  top: 70%;
+  left: 50%;
+ 
+  max-width: 35vw;
+  transform: translate(-50%, -50%);
+  z-index: 1   ;
+  width: 100%;
+  filter: drop-shadow(var(--shadow-soft));
+  
+  justify-content: space-between;
+  display: none;
+
+}
+#box-cover {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  max-width: 35vw;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 100%;
+}
+.box-items {
+ display: flex;
+  flex-direction: column;
+  width: 40%; /* adjust the width to your liking */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* define two columns */
+  grid-template-rows: 1fr 1fr;
+z-index: 2;
+  position: absolute;
+  left: 55%;
+  top: 40%;
+  transform: translateX(-50%);
+  
+}
+.box-items li img {
+
+  max-width: 10vw ;
+}
+#item-vinyl {
+  grid-column: 1; /* assign the first column to the first item */
+  grid-row: 1; /* assign the first row to the first item */
+  transform: scale(0.8); /* scale down the first item */
+  display: none;
+}
+
+#item-bag {
+  /* add these styles */
+  grid-column: 1; /* assign the second column to the second item */
+  transform: scale(1);
+  padding-bottom: 1vw;
+  display: none;
+}
+
+#item-fragile {
+  /* add these styles */
+  grid-column: 2; /* assign the first column to the third item */
+  transform: scale(0.8);
+  padding-top: 1vw;
+  display: none;
+}
+
+#item-books {
+  /* add these styles */
+  grid-column: 2; /* assign the second column to the fourth item */
+  grid-row: 1;
+  padding-top: 1vw;
+  display: none;
+
+}
+#dropVideo {
+  transition: transform 1s ease;
+}
+
+/* after JS adds the class */
+.shift-left {
+ 
+  left: 25% !important; /* adjust how far left */
+}
+.shift-left-1 {
+ 
+  left: 30% !important; /* adjust how far left */
+}
+.about-split {
+  
+  grid-gap: 2vw;
+  width: 100%; /* adjust the width to your liking */
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* define two columns */
+
+
+}
+.bio {
+  font-size: 1.3rem;
+  font-family: var(--font-body);
+  line-height: 1.5;
+
+  padding: 0 3vw;
+  text-align: center;
+}
+
+button.trigger {
+  background-color: var(--color-primary);
+  color: #fff !important;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  border: none;
+  padding: 5px 10px !important;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+
+  
+  color: var(--color-accent);
+}
+button.trigger:hover {
+ transform: rotate(5deg);
+}
+.bio, .box-items {
+  transition: opacity 0.5s ease;
+}
+.page-header {
+  color: var(--color-muted);
+  text-align: center;
+}
+.receipt-container {
+position: relative;
+top: 120vh;
+    max-height: 70vh;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 200vh;
+}
+
+.receipt-paper {
+    /* REPLACE the CSS-generated style with your image */
+    background-image: url('assets/receipt.png'); /* <-- This is the key line */
+    background-size: 100% 100%; /* Stretches the image to cover the entire div */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    background-position: center;
+top: 50vh;
+    /* Size the div to match your image's aspect ratio */
+    width: 100%; /* Will be constrained by max-width */
+    max-width: 60vw; /* Set this to the natural width of your paper design */
+    height: 100%;
+    padding-top: 50%; /* MAGIC NUMBER: This is the aspect ratio. 50% = 2:1 (width:height). Calculate: (height / width) * 100% */
+    padding: 4vw 3vw; /* You'll likely need to adjust this based on your design */
+padding-bottom: 15vw;
+    /* Content Styling */
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #000; /* Ensure text color contrasts with your paper */
+    position: relative; /* Needed for absolute positioning of content if required */
+    margin-bottom: 20vh;
+}
+.receipt-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2vw;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* We need a separate container for the text so we can position it over the background */
+.receipt-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem; /* This padding must match the "safe area" of your paper design */
+    box-sizing: border-box;
+}
+.title {
+  font-family: var(--font-mono);
+  margin-bottom: 1rem;
+  color: #000; /* Ensure the title is visible */
+}
+.receipt-item h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-family: var(--font-serif);
+  text-decoration: underline;
+}
+.receipt-paper h1 {
+  text-align: center;
+  font-weight: bold;
+
+}
+
+#edu {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#skills {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#exp {
+  grid-column: 2;
+  grid-row: 1/4;
+}
+#software {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.receipt-item p {
+font-size: 1rem;
+padding-left: 2vw;
+}
+.thank-you {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #000; /* Ensure the thank you message is visible */
+  font-family: var(--font-heading);
+}
+
+#face {
+ position: absolute;
+    top: 30vh;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    max-width: 250px;
+    z-index: 3;
+    visibility: visible;
+    animation: toggleVisibility 2s infinite;
+    transition: visibility 0.3s ease-in-out;
+    
+    /* Responsive sizing */
+    width: 25%; /* Percentage-based width */
+    max-width: 250px;
+    
+}
+
+#face-2 {
+ position: absolute;
+    top: 30vh;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    max-width: 250px;
+
+    
+    /* Responsive sizing */
+    width: 25%; /* Percentage-based width */
+    max-width: 250px;
+ 
+  z-index: 2;
+  visibility: visible;
+  
+}
+
+@keyframes toggleVisibility {
+            0% {
+                visibility: visible;
+                opacity: 1;
+            }
+            49% {
+                visibility: visible;
+                opacity: 1;
+            }
+            50% {
+                visibility: hidden;
+                opacity: 0;
+            }
+            99% {
+                visibility: hidden;
+                opacity: 0;
+            }
+            100% {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+        
+.speech-bubble {
+position: absolute;
+    /* bottom: 10px; */
+    left: 60%;
+    transform: translate(-10%, -40%);
+    /* background-color: #fff; */
+    padding: 10px;
+    border-radius: 10px;
+    background-image: url(assets/bubble1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    padding: 5vw 5vw;
+    right: 5%;
+    top: 20vh;
+    text-align: left !important;
+}
+#contact {
+  max-width: 50vw;
+    position: absolute;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stickers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+    max-width: 70vw;
+    width: 90%;
+    position: absolute;
+    top: 75vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 16 / 9;
+    background-image: url(assets/contact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+    padding: clamp(1rem, 3%, 2rem) clamp(1rem, 4%, 2.5rem);
+    box-sizing: border-box;
+    min-width: 300px;
+    position: relative;
+    
+    /* Remove flex/grid display */
+    display: block;
+    overflow: hidden;
+}
+
+.stickers img {
+  position: absolute;
+
+  max-width: 120px; /* prevents them from growing too large */
+  height: auto;
+  z-index: 5;
+  object-fit: contain;
+   
+    
+    /* Optional: Add slight shadow for depth */
+    filter: drop-shadow(var(--shadow-soft));
+    
+    /* Ensure images are draggable if you want interactive positioning */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+#sticker-1:hover,
+#sticker-2:hover,
+#sticker-3:hover,
+#sticker-4:hover,
+#sticker-5:hover,
+#sticker-6:hover {
+  /* Scale up the sticker on hover */
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+ transform: scale(1.05) rotate(5deg);
+  transition: transform 0.3s ease-in-out;
+}
+#sticker-1 {
+   
+    top: 15%; left: 40%;
+    transform: rotate(-12deg);
+}
+#sticker-2 {
+  
+    top: 10%; right: 15%;
+    transform: rotate(8deg);
+}
+#sticker-3 {
+   
+    bottom: 20%; left: 20%;
+    transform: rotate(18deg);
+}
+#sticker-4 {
+
+    bottom: 30%; right: 25%;
+    transform: rotate(-5deg);
+}
+#sticker-5 {
+    
+    top: 60%; left: 40%;
+   
+}
+#sticker-6 {
+    
+ top: 10%;
+    left: 10%;
+    transform: rotate(20deg);
+}
+
+.guest-check {
+top: 40vh;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-image: url(assets/guest.jpg);
+    background-size: cover;
+    background-position: center;
+    /* border: 2px dashed #5a4636; */
+    line-height: 1.4;
+    position: relative;
+    cursor: grab;
+    width: 80%;
+    
+}
+
+/* top "Guest Check" heading */
+.guest-check h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2c2c2c;
+  border-bottom: 2px dashed #5a4636;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+}
+
+/* labels + inputs layout */
+.guest-check label {
+  display: block;
+  font-size: 1rem;
+  margin: 0.5rem 0 0.2rem;
+  letter-spacing: 0.5px;
+  color: #333;
+  font-family: var(--font-mono);
+}
+
+.guest-check input,
+.guest-check textarea {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+ 
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.guest-check textarea {
+  resize: none;
+  height: 10vw;
+}
+
+/* submit button styled like stamp */
+.guest-check button, #download-cv {
+  margin-top: 5vh;
+  background: url(assets/cover.png) no-repeat center center;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guest-check button:hover, #download-cv:hover {
+transform: rotate(5deg);
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* optional: little perforated edge effect */
+.guest-check::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 6px,
+    #fffdf6 6px,
+    #fffdf6 12px
+  );
+}
+.guest-check.dragging {
+  opacity: 0.6;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding-bottom: 40vh;
+}
+
+.main-two-columns {
+  display: grid;
+  grid-template-columns: 2.5fr 2fr;
+  gap: 2rem;
+  padding-bottom: 40vh;
+  padding-top: 20vh;
+}
+
+.right-column {
+  text-align: center;
+}
+.left-column {
+
+  height: auto;
+
+}
+#journal-img {
+ width: 100%;
+    height: auto;
+    max-width: 50vw;
+    transform: scale(1.3);
+    margin-top: 10vh;
+    filter: drop-shadow(6px 6px 10px rgba(209, 143, 143, 0.3));
+}
+.cart-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 5vh;
+  margin-left: 15vw;
+}
+
+#cart {
+  width: 100%;
+  height: auto;
+  max-width: 12vw;
+  cursor: pointer;
+}
+#freebie {
+  width: 100%;
+  height: auto;
+  max-width: 12vw;
+  cursor: pointer;
+  position: absolute;
+display: none;
+right: 15vw;
+top: 1vh;
+
+}
+
+#cart:hover {
+  animation: wiggle 0.5s ease-in-out;
+
+}
+#cart:hover ~ #freebie {
+  display: block;
+}
+
+.cart-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  opacity: 0;
+  transition: all 0.4s ease-out;
+
+  height: auto;
+  pointer-events: none;
+}
+
+.cart-item.spread {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  cursor: grab;
+
+}
+
+#post-img.spread {
+top: 50vh;
+    left: -70vw;
+    width: 45vw;
+    transform: rotate(-5deg);
+}
+#id-card.spread {
+top: 45vh;
+    left: -20vw;
+    width: 35vw;
+    transform: rotate(2deg);
+}
+#ca-img.spread {
+    top: 80vh;
+    left: -70vw;
+    max-width: 40vw;
+    transform: rotate(6deg);
+}
+
+#receipt-img.spread {
+    top: 70vh;
+    left: -20vw;
+    max-width: 20vw;
+    transform: rotate(-2deg);
+}
+#about-video {
+  max-width: 40vw;
+  height: auto;
+  padding: 0;
+
+}
+.contact {
+  position: relative;
+}
+
+#mailbox {
+  display: none;
+}
+ #star-about {
+  position: absolute;
+    margin-top: 60vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50vw;
+    z-index: -1000;
+    display: block;
+  }
+
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  #star-about {
+    display: none;
+  }
+  .main-two-columns {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .left-column, .right-column {
+    display: contents;
+  }
+  .page-header {
+    order: 1;
+  }
+  .bio {
+    order: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .journal {
+    order: 3;
+  }
+  .cart-container {
+    order: 4;
+     margin-top: 0vh;
+    margin-left: 0vh;
+  }
+  .cart-item {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0) scale(0.1);
+  }
+  #freebie {
+        max-width: 20vw;
+      left: 20vw;
+      display: block;
+  }
+  #about-video {
+    max-width: 70vw;
+
+  }
+  .guest-check {
+            width: 50%;
+        margin: 10vw;
+        transform: translate(25%, 0);
+        top: 30vh;
+
+  }
+#id-card.spread {
+
+    left: 40vw;
+    width: 55vw;
+}
+#receipt-img.spread {
+   left: 50vw !important;
+    max-width: 30vw;
+}
+#ca-img.spread {
+      left: 0vw;
+    max-width: 55vw;
+}
+#post-img.spread {
+    left: 0vw;
+    width: 60vw;
+}
+  .speech-bubble {
+    right: 5%;
+    left: auto;
+    top: 10vh;
+  }
+  #mailbox {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    max-width: 60vw;
+    top: 70%;
+    margin-top: 0;
+    position: absolute;
+    z-index: -10;
+    left: 50%;
+  }
+}
+
+
+@media (max-width: 1440px) {
+  .stickers {
+    top: 40vh;
+  }
+  #face, #face-2 {
+    top: 20vh;
+  }
+  #id-card.spread, #post-img.spread {
+    top: 20vh;
+  }
+  #receipt-img.spread, #ca-img.spread {
+    top: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+#about-video {
+  max-width: 80vw;
+}
+.bio {
+  top: 50vh;
+}
+.journal-img {
+    max-width: 90vw !important;  
+}
+}
+@media (max-width: 412px) {
+  .bio {
+    top: 50vh !important;
+  }
+  .cart-item.spread {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    width: 90vw;
+    max-width: 90vw;
+  }
+  #post-img.spread {
+    top: 20vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #id-card.spread {
+    top: 40vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #ca-img.spread {
+    top: 60vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #receipt-img.spread {
+    top: 80vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  .cart-item.spread {
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    width: 85vw;
+    max-width: 85vw;
+  }
+  #post-img.spread {
+    top: 25vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #id-card.spread {
+    top: 45vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #ca-img.spread {
+    top: 65vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+  #receipt-img.spread {
+    top: 85vh;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+}
