@@ -265,15 +265,7 @@ uiTItle.addEventListener('click', function() {
   uiTItleAppear.style.display = 'block';
 });
 
-// Cart click interaction
-document.getElementById('badge').addEventListener('click', function() {
-  const link = document.createElement('a');
-  link.href = './CV_FHUONGFHAM.pdf'; // use "./" to ensure it looks in the same folder
-  link.download = 'CV_FHUONGFHAM.pdf';
-  document.body.appendChild(link); // some browsers need it in the DOM
-  link.click();
-  document.body.removeChild(link);
-});
+// Cart click interaction - removed since badge now uses HTML download link
 
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
